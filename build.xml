@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<project name="Sentencias de control" basedir="." default="todo">
+    <property name="src" value="src"/>
+    <property name="classes" value="classes"/>
+    <property name="doc" value="doc"/>
+
+    <property name="paquetes" value="es.unileon.prg1.arrays"/>
+
+    <target name="clean">
+      <delete dir="${classes}"/>
+      <delete dir="${doc}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+      <mkdir dir="${classes}"/>
+      <javac includeantruntime="false" srcdir="${src}" destdir="${classes}"/>
+      <echo message="Compiling...done"/>
+    </target>
+
+    <target name="javadoc" depends="compile">
+      <mkdir dir="${doc}"/>
+      <javadoc sourcepath="${src}"
+        packagenames="${paquetes}"
+        destdir="${doc}"
+        access="private"
+        splitindex="true"
+        version="true"
+        windowtitle="Documentacion practica arrays"
+        doctitle="Documentacion practica arrays"
+      />
+      <echo message="Javadoc created"/>
+    </target>
+
+    <target name="run" depends="javadoc">
+      <java classname="es.unileon.prg1.arrays.ClasePrincipal">
+         <classpath>
+            <pathelement path="${classes}"/>
+         </classpath>
+      </java>
+    </target>
+
+    <target name="todo" depends="run"/>
+
+</project>
