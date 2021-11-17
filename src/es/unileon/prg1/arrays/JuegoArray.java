@@ -36,7 +36,7 @@ public class JuegoArray {
 
     /**
      * Shows in console the value of each position of a given array.
-     * @param array
+     * @param array An argument
      */
     public void showArrayValues(int[] array) {
         System.out.println("Valores del array introducido como parametro");

@@ -18,7 +18,7 @@ package es.unileon.prg1.arrays;
  *
  * Podeis renombrar los metodos o las clases a una politica de naming que os guste mas
  */
-class ClasePrincipal {
+public class ClasePrincipal {
 
     public static void main(String[] args) {
 
